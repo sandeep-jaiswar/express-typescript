@@ -1,0 +1,95 @@
+{
+  "editor.autoIndent": "advanced",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Monaco,Fira Code SemiBold, Consolas, 'Courier New', monospace",
+  "editor.fontSize": 12,
+  "editor.insertSpaces": false,
+  "editor.tabSize": 2,
+  "prettier.requireConfig": false,
+  "prettier.semi": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "javascript.format.insertSpaceAfterConstructor": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+    "javascript.implicitProjectConfig.experimentalDecorators": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  "eslint.alwaysShowStatus": true,
+  "html.format.enable": false,
+  "htmlhint.enable": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "workbench.colorTheme": "Monokai",
+  "workbench.iconTheme": "vs-seti",
+  "rainbowTags.allowEverywhere": true,
+  "emmet.triggerExpansionOnTab": true,
+  "editor.matchBrackets": "never",
+  "git.confirmSync": false,
+  "explorer.confirmDragAndDrop": false,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false,
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.inlineSuggest.enabled": true,
+  "dart.lineLength": 250,
+  "editor.detectIndentation": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "tabnine.experimentalAutoImports": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": true,
+    "markdown": false,
+    "javascript": true,
+    "json": true
+  },
+  "editor.linkedEditing": true,
+  "prettier.printWidth": 80,
+  "prettier.useEditorConfig": false,
+  "eslint.validate": ["javascript"],
+  "cSpell.languageSettings": [],
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "javascript.format.insertSpaceAfterConstructor": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+  "dart.flutterSdkPath": "C:\\src\\flutter",
+  "files.eol": "\n",
+  "terminal.integrated.fontFamily": "monospace",
+  "files.autoSave": "afterDelay",
+  "window.zoomLevel": 1,
+  "go.toolsManagement.autoUpdate": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "emmet.includeLanguages": {
+    "postcss": "css"
+  },
+  "workbench.productIconTheme": "Default",
+  "files.autoGuessEncoding": true
+}
