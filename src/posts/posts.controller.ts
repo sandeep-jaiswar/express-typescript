@@ -1,6 +1,7 @@
 import HttpException from 'exceptions/HttpException';
 import NotFoundException from 'exceptions/NotFoundException';
 import * as express from 'express';
+import authMiddleware from 'middleware/auth.middleware';
 import validationMiddleware from 'middleware/validation.middleware';
 import CreatePostDto from './post.dto';
 import Post from './post.interface';
@@ -18,7 +19,11 @@ class PostsController {
   private intializeRoutes() {
     this.router.get(this.path, this.getAllPosts);
     this.router.get(this.pathById, this.getPostById);
-    this.router.post(this.path, validationMiddleware(CreatePostDto), this.createAPost);
+    this.router.post(
+      this.path,
+      validationMiddleware(CreatePostDto),
+      this.createAPost
+    );
     this.router.patch(
       this.pathById,
       validationMiddleware(CreatePostDto, true),
@@ -33,7 +38,7 @@ class PostsController {
     next: express.NextFunction
   ) => {
     const allPosts = await PostModel.find();
-		if (allPosts) {
+    if (allPosts) {
       response.send(allPosts);
     } else {
       next(new HttpException(404, 'Post not found'));
@@ -57,13 +62,12 @@ class PostsController {
     next: express.NextFunction
   ) => {
     const { id } = request.params;
-		const post = await PostModel.findById(id);
-		if (post) {
-			response.send(post);
-		} else {
-			next(new NotFoundException(id))
-		}
-
+    const post = await PostModel.findById(id);
+    if (post) {
+      response.send(post);
+    } else {
+      next(new NotFoundException(id));
+    }
   };
 
   private modifyPost = async (
@@ -87,11 +91,11 @@ class PostsController {
     next: express.NextFunction
   ) => {
     const { id } = request.params;
-		const successResponse = await PostModel.findByIdAndDelete(id);
-		if (successResponse) {
-			response.send(200);
-		} else {
-			next(new NotFoundException(id));
+    const successResponse = await PostModel.findByIdAndDelete(id);
+    if (successResponse) {
+      response.send(200);
+    } else {
+      next(new NotFoundException(id));
     }
   };
 }
