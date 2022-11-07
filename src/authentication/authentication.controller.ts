@@ -1,16 +1,16 @@
 import * as express from 'express';
 import Controller from 'interfaces/controller.interface';
-import userModel from 'users/user.model';
+import userModel from 'features/users/user.model';
 import validationMiddleware from 'middleware/validation.middleware';
 import WrongCredentialsException from 'exceptions/WrongCredentialsException';
-import CreateUserDto from 'users/user.dto';
-import LogInDto from 'users/login.dto';
+import CreateUserDto from 'features/users/user.dto';
+import LogInDto from 'features/users/login.dto';
 import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
 import UserWithThatEmailAlreadyExistsException from 'exceptions/UserWithThatEmailAlreadyExistsException';
 import TokenData from 'interfaces/TokenData.interface';
 import DataStoredInToken from 'interfaces/DataStoredInToken.interface';
-import User from 'users/user.interface';
+import User from 'features/users/user.interface';
 
 class AuthenticationController implements Controller {
   public path = '/auth';
@@ -31,8 +31,8 @@ class AuthenticationController implements Controller {
       `${this.path}/login`,
       validationMiddleware(LogInDto),
       this.loggingIn
-		);
-		this.router.post(`${this.path}/logout`, this.loggingOut);
+    );
+    this.router.post(`${this.path}/logout`, this.loggingOut);
   }
 
   private registration = async (

@@ -3,7 +3,7 @@ import * as express from 'express';
 import Controller from 'interfaces/controller.interface';
 import RequestWithUser from 'interfaces/RequestWithUser.interface';
 import authMiddleware from 'middleware/auth.middleware';
-import postModel from 'posts/posts.model';
+import postModel from 'features/posts/posts.model';
 
 class UserController implements Controller {
   public path = '/users';

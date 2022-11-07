@@ -2,7 +2,7 @@ import { NextFunction, Response } from 'express';
 import DataStoredInToken from 'interfaces/DataStoredInToken.interface';
 import RequestWithUser from 'interfaces/RequestWithUser.interface';
 import * as jwt from 'jsonwebtoken';
-import userModel from 'users/user.model';
+import userModel from 'features/users/user.model';
 import AuthenticationTokenMissingException from '../exceptions/AuthenticationTokenMissingException';
 import WrongAuthenticationTokenException from '../exceptions/WrongAuthenticationTokenException';
 
@@ -11,9 +11,11 @@ async function authMiddleware(
   response: Response,
   next: NextFunction
 ) {
-	const token = request.headers.authorization && request.headers.authorization.split(" ")[1];
+  const token =
+    request.headers.authorization &&
+    request.headers.authorization.split(' ')[1];
   if (token && token.length > 0) {
-		const secret = process.env.JWT_SECRET;
+    const secret = process.env.JWT_SECRET;
     try {
       const verificationResponse = jwt.verify(
         token,
