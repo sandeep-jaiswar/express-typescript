@@ -1,13 +1,13 @@
 import 'dotenv/config';
 import 'reflect-metadata';
 import App from './app';
-import AuthenticationController from 'authentication/authentication.controller';
 import validateEnv from 'utils/validateEnv';
-import UserController from 'features/users/user.controller';
-import ReportController from 'features/reports/reports.controller';
 import { createConnection } from 'typeorm';
 import config from 'ormconfig';
-import PostController from 'controllers/PostController.controller';
+import FranchiseController from 'controllers/Franchise.controller';
+import RestaurantController from 'controllers/Restaurant.controller';
+import FileController from 'controllers/Files.controller';
+import PlayerController from 'controllers/PlayerController.controller';
 
 validateEnv();
 
@@ -19,10 +19,10 @@ validateEnv();
     return error;
   }
   const app = new App([
-    new PostController(),
-    new AuthenticationController(),
-    new UserController(),
-    new ReportController(),
+    new FranchiseController(),
+    new RestaurantController(),
+		new PlayerController(),
+    new FileController(),
   ]);
   app.listen();
 })();
