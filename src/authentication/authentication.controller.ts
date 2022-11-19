@@ -62,7 +62,7 @@ class AuthenticationController implements Controller {
     next: express.NextFunction
   ) => {
     const logInData: LogInDto = request.body;
-    const user = await this.user.findOne({ email: logInData.email });
+    const user = await this.user.findOne({ username: logInData.username });
     if (user) {
       const isPasswordMatching = await bcrypt.compare(
         logInData.password,
